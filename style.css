@@ -1,0 +1,11 @@
+table,
+th,
+td {
+  border: 1px solid black;
+}
+.logout {
+  position: relative;
+  align-content: right;
+  background-color: aquamarine;
+  padding: 5px;
+}
