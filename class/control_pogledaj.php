@@ -42,13 +42,13 @@ class View{
                         <input type="submit" value="submit">
                         </form>
                     </tr>
-                    <?php    
+                    <?php  
+                      
                 }
+                
             }else {echo 'Pacijent ne postoji!';}
 
-            if(isset($_POST['submit'])){
-                
-            }
+            
     }
 
 }

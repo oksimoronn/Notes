@@ -18,8 +18,10 @@ if(!isset($_SESSION["sess_user"])){
     <title>Document</title>
 </head>
 
-
-<a href="logout.php">Logout</a>
+<table>
+<button><a href="">Novi pacijent</a></button>
+<button><a href="logout.php">Logout</a></button>
+</table>
 
 
 <table>

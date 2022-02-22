@@ -5,5 +5,5 @@ $show = new Home();
 
 $show->showPacijenti();
 
-//$show -> logout();
+//$show -> deletePacijenti();
 
