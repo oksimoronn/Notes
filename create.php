@@ -1,4 +1,12 @@
-
+<?php   
+session_start();
+if(!isset($_SESSION["sess_user"])){  
+    ?>
+    <a href="resolut.php"><h1>Moras se ulogirati</h1></a>
+    <?php
+     
+} else {
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,4 +34,6 @@
 </body>
 </html>
 
- 
+<?php  
+}  
+?> 
