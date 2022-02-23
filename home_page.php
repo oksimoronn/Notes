@@ -19,7 +19,7 @@ if(!isset($_SESSION["sess_user"])){
 </head>
 
 <table>
-<button><a href="">Novi pacijent</a></button>
+<button><a href="create.php">Novi pacijent</a></button>
 <button><a href="logout.php">Logout</a></button>
 </table>
 

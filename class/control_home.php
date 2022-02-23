@@ -28,7 +28,7 @@ class Home{
                         <td><?php echo $oi ?></td>
                         <td><?php echo $dob ?></td>
                         <td><?php echo $dij ?></td>
-                        <td><button><a href="pogledaj.php?id=<?php echo $oi;?>">Pogledaj</a></button>
+                        <td><button><a href="pogledaj.php?id=<?php echo $oi;?>">Izmjeni</a></button>
                         <button><a href="class/delete.php?id=<?php echo $oi;?>">izbriši</a></button></td>
                     </tr>
                     <?php    
