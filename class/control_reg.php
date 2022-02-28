@@ -16,7 +16,9 @@ class App{
         $stmt ="INSERT INTO users (user, pass) VALUES ('{$this->un}', '{$this->ps}')";
         $query = $pdo->prepare($stmt);
         $query->execute();
-        $stmt = null;
+       // $stmt = null;
+
+        header("location:C:/ph/htdocs/doktor/class/resolut.php");
 
     }
 
