@@ -8,11 +8,10 @@ class View{
 
             $id = $_GET['id'];
             
-            $stmt1 ="SELECT * FROM pacijenti WHERE OIB = ('$id')";
-            $query = $pdo->prepare($stmt1);
-            $query->execute();
+            $stmt1 = $pdo->prepare("SELECT * FROM pacijenti WHERE OIB = ?");
+            $stmt1->execute([$id]);
 
-            $res = $query->fetch(PDO::FETCH_ASSOC);
+            $res = $stmt1->fetch(PDO::FETCH_ASSOC);
   
             $nam = $res['Ime'];
             $lnam = $res['Prezime'];
@@ -40,6 +39,8 @@ class View{
             </form>
             
             <?php 
+
+            $stmt1 = null;
     }
 
     if(count($_POST) > 0 ){
@@ -52,10 +53,10 @@ class View{
         $dobp = $_POST['dob'];
         $dijp = $_POST['dij'];
 
-        $stmt1 ="UPDATE pacijenti SET Ime=('$namp'), Prezime = ('$lnamp'), OIB = ('$oip'), Dob = ('$dobp'), Dijagnoza = ('$dijp') WHERE OIB = ('$id')";
-        $query = $pdo->prepare($stmt1);
-        $query->execute();
+        $stmt1 =$pdo->prepare ("UPDATE pacijenti SET Ime= ?, Prezime = ?, OIB = ?, Dob = ?, Dijagnoza = ? WHERE OIB = ?");
+        $stmt1->execute([$namp, $lnamp, $oip, $dobp, $dijp, $id]);
 
+        $stmt1 = null;
         header("location:./home_page.php");
     }
 
