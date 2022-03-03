@@ -1,7 +1,6 @@
 <?php
 include "control_reg.php";
 
-
 if(isset($_POST)){
     $un = $_POST['us'];
     $ps = $_POST['ps'];
@@ -13,4 +12,6 @@ if(isset($_POST)){
     $reg -> newUser();
     
 }
+
+
 

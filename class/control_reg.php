@@ -15,11 +15,10 @@ class App{
         
         $stmt = $pdo->prepare("INSERT INTO users (user, pass) VALUES (?, ?)");
         $stmt->execute([$this->un, $this->ps]);
+
+        header("location:../login.php");
         
         $stmt = null;
-
-        header("location:C:/ph/htdocs/doktor/class/resolut.php");
-
     }
 
 }
