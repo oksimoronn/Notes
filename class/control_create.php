@@ -19,13 +19,9 @@ class Create{
      function newCreate(){
         require_once "../db/db.php";
         
-        $stmt ="INSERT INTO pacijenti (Ime, Prezime, OIB, Dob, Dijagnoza) VALUES ('{$this->nam}', '{$this->lnam}','{$this->oib}','{$this->dob}','{$this->dij}')";
-        $query = $pdo->prepare($stmt);
-        $query->execute();
-        //$stmt = null;
-
-        
-
+        $stmt = $pdo->prepare("INSERT INTO pacijenti (Ime, Prezime, OIB, Dob, Dijagnoza) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$this->nam, $this->lnam, $this->oib, $this->dob, $this->dij]);
+        $stmt = null;
     }
 
 }

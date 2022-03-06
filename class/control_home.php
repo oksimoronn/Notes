@@ -7,15 +7,14 @@ class Home{
        
         include "C:\ph\htdocs\doktor\db\db.php";
 
-        $stmt1 ="SELECT * FROM pacijenti ";
-        $query = $pdo->prepare($stmt1);
-        $query->execute();
+        $stmt1 =$pdo->prepare("SELECT * FROM pacijenti");
+        $stmt1->execute();
 
-        $nrows = $query-> rowCount();
+        $nrows = $stmt1-> rowCount();
         
             if($nrows != 0){
                 
-                foreach($query as $stmt) {  
+                foreach($stmt1 as $stmt) {  
                         $nam = $stmt['Ime'];
                         $lnam = $stmt['Prezime'];
                         $oi = $stmt['OIB'];
@@ -33,9 +32,8 @@ class Home{
                     </tr>
                     <?php    
                 }
-            }else{
-                echo 'Nema pacijenata';}
-                
+            }else{echo 'Nema pacijenata';}
+        $stmt1 = null;
     } 
 
    

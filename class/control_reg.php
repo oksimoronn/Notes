@@ -13,11 +13,12 @@ class App{
      function newUser(){
         require_once "../db/db.php";
         
-        $stmt ="INSERT INTO users (user, pass) VALUES ('{$this->un}', '{$this->ps}')";
-        $query = $pdo->prepare($stmt);
-        $query->execute();
-        $stmt = null;
+        $stmt = $pdo->prepare("INSERT INTO users (user, pass) VALUES (?, ?)");
+        $stmt->execute([$this->un, $this->ps]);
 
+        header("location:../login.php");
+        
+        $stmt = null;
     }
 
 }
