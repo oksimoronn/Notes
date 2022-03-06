@@ -18,15 +18,10 @@ if(!isset($_SESSION["sess_user"])){
     <title>Document</title>
 </head>
 
-<form action="search.php" method="get">
-    <input type="text" name="search" placeholder="Ime ili OIB">
-    <input type="submit" name="submit" value="Search">
-</form>
 
-<table>
-    <button><a href="create.php">Novi pacijent</a></button>
-    <button><a href="logout.php">Logout</a></button>
-</table>
+<a href="home_page.php">Home</a>
+<a href="logout.php">Logout</a>
+
 
 
 <table>
@@ -40,7 +35,7 @@ if(!isset($_SESSION["sess_user"])){
     </tr>  
 <?php     
 
-require "./class/render_home.php";
+require "./class/render_search.php";
   
 ?> 
 </table>
