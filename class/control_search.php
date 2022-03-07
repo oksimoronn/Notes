@@ -11,8 +11,9 @@ class Search{
     function searchIme(){
         require_once "C:\ph\htdocs\doktor\db\db.php";
            
+        $data = "%$this->src%";
         $stmt = $pdo->prepare("SELECT * FROM pacijenti WHERE Ime LIKE ?");
-        $stmt->execute([$this->src]);
+        $stmt->execute([$data]);
 
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
 
