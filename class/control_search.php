@@ -10,12 +10,13 @@ class Search{
 
     function searchIme(){
         require_once "C:\ph\htdocs\doktor\db\db.php";
-            
+           
         $stmt = $pdo->prepare("SELECT * FROM pacijenti WHERE Ime LIKE ?");
         $stmt->execute([$this->src]);
 
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        if($res){
         $nam = $res['Ime'];
         $lnam = $res['Prezime'];
         $oi = $res['OIB'];
@@ -36,18 +37,19 @@ class Search{
         </tr>
             
         <?php 
-
+        }else {echo 'Ne pravilan pojam za pretragu!';}
         $stmt = null;
     }
 
     function searchOib(){
         require_once "C:\ph\htdocs\doktor\db\db.php";
-            
+           
         $stmt = $pdo->prepare("SELECT * FROM pacijenti WHERE OIB LIKE ?");
         $stmt->execute([$this->src]);
-
+        
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        if($res){
         $nam = $res['Ime'];
         $lnam = $res['Prezime'];
         $oi = $res['OIB'];
@@ -68,7 +70,7 @@ class Search{
         </tr>
             
         <?php 
-
+        }else {echo 'Ne pravilan pojam za pretragu!';}
         $stmt = null;
     }
 }
