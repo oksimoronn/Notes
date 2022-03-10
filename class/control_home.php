@@ -5,7 +5,7 @@ class Home{
 
     function showPacijenti(){
        
-        include "C:\ph\htdocs\doktor\db\db.php";
+        require "./db/db.php";
 
         $stmt1 =$pdo->prepare("SELECT * FROM pacijenti");
         $stmt1->execute();
@@ -35,8 +35,6 @@ class Home{
             }else{echo 'Nema pacijenata';}
         $stmt1 = null;
     } 
-
-   
 
 }
 ?>

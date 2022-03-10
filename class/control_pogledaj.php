@@ -3,7 +3,7 @@
 class View{
 
     function renderView(){
-        include "C:\ph\htdocs\doktor\db\db.php";
+        include "./db/db.php";
         if(isset($_GET['id'])){
 
             $id = $_GET['id'];

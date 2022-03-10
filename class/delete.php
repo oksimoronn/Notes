@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['id'])){
-    include "C:\ph\htdocs\doktor\db\db.php";
+    include "../db/db.php";
 
     $oi = $_GET['id'];
 

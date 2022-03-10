@@ -9,7 +9,7 @@ class Search{
     }
 
     function searchIme(){
-        require_once "C:\ph\htdocs\doktor\db\db.php";
+        require_once "./db/db.php";
            
         $data = "%$this->src%";
         $stmt = $pdo->prepare("SELECT * FROM pacijenti WHERE Ime LIKE ?");
